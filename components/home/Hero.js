@@ -23,7 +23,7 @@ const Hero = () => {
               Automatic Attendence
               <span class="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">
                 {" "}
-                Mamagement System
+                Management System
               </span>
             </h1>
           </div>
