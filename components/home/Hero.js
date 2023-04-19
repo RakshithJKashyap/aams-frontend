@@ -1,7 +1,17 @@
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa";
+import { useUser } from "@auth0/nextjs-auth0/client";
+import Loading from "../Loading";
+import { useRouter } from "next/router";
 
 const Hero = () => {
+  const { user, isLoading } = useUser();
+  const router = useRouter();
+  if (isLoading) return <Loading />;
+  if (user) {
+    router.push("/dashboard");
+  }
+
   return (
     <div class="flex items-center justify-center h-screen">
       <div class="relative overflow-hidden before:bg-no-repeat before:bg-top before:bg-cover before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2">

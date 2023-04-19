@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FaHamburger, FaUser } from "react-icons/fa";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 const Navbar = (props) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-
+  const { user, isLoading } = useUser();
   return (
     <div className="fixed z-50 w-full bg-black pt-[5px] select-none border-b border-gray-600">
       <nav className="w-full">
@@ -20,22 +21,22 @@ const Navbar = (props) => {
 
           <div className="hidden items-center justify-between gap-3 lg:flex">
             <div className="">
-              {props.loginpage ? (
-                <Link
-                  href="/signup"
+              {!isLoading && !user && (
+                <a
+                  href="/api/auth/login"
                   className="font-bold text-white hover:text-secondaryblue flex items-center gap-2 px-4 py-2 rounded-md transition duration-300 ease-in-out hover:text-blue-600"
                 >
                   <FaUser />
-                  Sign Up
-                </Link>
-              ) : (
-                <Link
-                  href="/login"
+                  Login
+                </a>
+              )}
+              {user && (
+                <a
+                  href="/api/auth/logout"
                   className="font-bold text-white hover:text-secondaryblue flex items-center gap-2 px-4 py-2 rounded-md transition duration-300 ease-in-out hover:text-blue-600"
                 >
-                  <FaUser />
-                  Log in
-                </Link>
+                  Log out
+                </a>
               )}
             </div>
           </div>
