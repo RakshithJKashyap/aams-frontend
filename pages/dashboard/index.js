@@ -1,11 +1,14 @@
-import Navbar from "@/components/Navbar";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import Dash from "@/layouts/Dash";
 
-const Dashboard = () => {
+const Dashboard = ({ user }) => {
   return (
-    <div>
-      <Navbar />
-    </div>
+    <>
+      <Dash title={`Dashboard`} user={user}></Dash>
+    </>
   );
 };
+
+export const getServerSideProps = withPageAuthRequired();
 
 export default Dashboard;
