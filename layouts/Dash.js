@@ -22,9 +22,9 @@ const Dash = ({ children, title, user }) => {
         </Head>
         <div className="bg-slate-900">
           <SidebarStudent title="Dashboard" />
-          <div class="sidebarenhance">
+          <div className="sidebarenhance">
             <header>
-              <h1 class="block text-2xl font-bold text-gray-800 sm:text-3xl dark:text-white">
+              <h1 className="block text-2xl font-bold text-gray-800 sm:text-3xl dark:text-white">
                 {title}
               </h1>
               <div>{children}</div>
@@ -42,9 +42,9 @@ const Dash = ({ children, title, user }) => {
         </Head>
         <div className="bg-slate-900">
           <SidebarTecher title="Dashboard" />
-          <div class="sidebarenhance">
+          <div className="sidebarenhance">
             <header>
-              <h1 class="block text-2xl font-bold text-gray-800 sm:text-3xl dark:text-white">
+              <h1 className="block text-2xl font-bold text-gray-800 sm:text-3xl dark:text-white">
                 {title}
               </h1>
               <div>{children}</div>

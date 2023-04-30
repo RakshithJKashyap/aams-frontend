@@ -9,6 +9,7 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { useState } from "react";
+import Link from "next/link";
 
 const SidebarStudent = ({ title }) => {
   const [sidebarToggle, setSidebarToggle] = useState(true);
@@ -134,10 +135,10 @@ export const SidebarTecher = ({ title }) => {
               </div>
             </li>
             <li className="cursor-pointer">
-              <div className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
+              <Link href={`/dashboard/profile`} className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
                 <FaUser color="white" />
                 Profile
-              </div>
+              </Link>
             </li>
             <li className="cursor-pointer">
               <div className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
@@ -148,7 +149,7 @@ export const SidebarTecher = ({ title }) => {
             <li className="cursor-pointer">
               <div className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
                 <FaRProject color="white" />
-                Avaliable Classes
+                Avaliable classes
               </div>
             </li>
             <li className="cursor-pointer">

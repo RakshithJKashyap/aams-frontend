@@ -3,14 +3,14 @@ import axios from "axios";
 import { FaRemoveFormat } from "react-icons/fa";
 
 function Table() {
-  const [className, setClassName] = useState("");
+  const [className, setclassNameName] = useState("");
   const [ipAddress, setIpAddress] = useState("");
   const [rowChanged, setRowChanged] = useState(false); // [1
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/get_cameras")
+      .get(`${process.env.NEXT_PUBLIC_BASE_URL}/get_cameras`)
       .then((response) => setRows(response.data))
       .catch((error) => console.error(error));
   }, [ipAddress, rowChanged]);
@@ -21,16 +21,16 @@ function Table() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/add_cameras", {},
+        `${process.env.NEXT_PUBLIC_BASE_URL}/add_cameras`, {},
          {
           params: {
-            class_name: className,
+            className_name: className,
             ip_address : ipAddress,
           }
         }
       );
       setRows([...rows, response.data]);
-      setClassName("");
+      setclassNameName("");
       setIpAddress("");
     } catch (error) {
       console.error(error);
@@ -38,10 +38,10 @@ function Table() {
     
   };
 
-  const handleDelete = async (id, class_name ) => {
+  const handleDelete = async (id, className_name ) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/delete_camera/${class_name }`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/delete_camera/${className_name }`
       );
       if (response.data.status === "success") {
         setRowChanged(!rowChanged); // [2
@@ -64,7 +64,7 @@ function Table() {
             id="className-name-input"
             placeholder="Enter className name"
             value={className}
-            onChange={(e) => setClassName(e.target.value)}
+            onChange={(e) => setclassNameName(e.target.value)}
             className="w-full px-3 py-2 border border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
           />
         </div>
@@ -120,14 +120,14 @@ function Table() {
                   {rows.map((row, index) => (
                     <tr key={index}>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-200">
-                        {row.class_name}
+                        {row.className_name}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-200">
                         {row.ip_address}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <button
-                          onClick={() => handleDelete(row.id, row.class_name)}
+                          onClick={() => handleDelete(row.id, row.className_name)}
                           className="text-red-600 hover:text-red-800"
                         >
                           <FaRemoveFormat/>

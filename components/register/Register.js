@@ -23,7 +23,7 @@ const Register = ({ user }) => {
     formData.append("photo", selectedFile);
 
     axios
-      .post("https://aamsbackend.onrender.com/first_register", formData, {
+      .post("/first_register", formData, {
         params: {
           auth0_token: user.sub,
           name: name,
