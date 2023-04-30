@@ -1,4 +1,4 @@
-import SidebarStudent from "@/components/LayoutComponents/Sidebar";
+import SidebarStudent, { SidebarTecher } from "@/components/LayoutComponents/Sidebar";
 import { useQuery } from "react-query";
 import { getUserfromDB } from "@/lib/reactQueryFetcher";
 import FourOhFour from "@/components/FourOhFour";
@@ -22,7 +22,7 @@ const Dash = ({ children, title, user }) => {
         </Head>
         <div className="bg-slate-900">
           <SidebarStudent title="Dashboard" />
-          <div class="w-full sidebarenhance">
+          <div class="sidebarenhance">
             <header>
               <h1 class="block text-2xl font-bold text-gray-800 sm:text-3xl dark:text-white">
                 {title}
@@ -41,8 +41,8 @@ const Dash = ({ children, title, user }) => {
           <title>Dashboard</title>
         </Head>
         <div className="bg-slate-900">
-          <SidebarStudent title="Dashboard" />
-          <div class="w-full sidebarenhance">
+          <SidebarTecher title="Dashboard" />
+          <div class="sidebarenhance">
             <header>
               <h1 class="block text-2xl font-bold text-gray-800 sm:text-3xl dark:text-white">
                 {title}
