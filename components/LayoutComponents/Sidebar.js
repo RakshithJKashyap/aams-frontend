@@ -87,7 +87,6 @@ const SidebarStudent = ({ title }) => {
 
 export default SidebarStudent;
 
-
 export const SidebarTecher = ({ title }) => {
   const [sidebarToggle, setSidebarToggle] = useState(true);
   return (
@@ -134,29 +133,39 @@ export const SidebarTecher = ({ title }) => {
                 Dashboard
               </div>
             </li>
+
             <li className="cursor-pointer">
-              <Link href={`/dashboard/profile`} className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
+              <Link
+                href={`/dashboard/teacher/select`}
+                className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white"
+              >
                 <FaUser color="white" />
-                Profile
+                Select Class
               </Link>
             </li>
             <li className="cursor-pointer">
-              <div className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
-                <FaStumbleupon color="white" />
-                Select Class
-              </div>
-            </li>
-            <li className="cursor-pointer">
-              <div className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
+              <Link
+                href={`/dashboard/teacher/available`}
+                className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white"
+              >
                 <FaRProject color="white" />
                 Avaliable classes
-              </div>
+              </Link>
             </li>
             <li className="cursor-pointer">
               <div className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
                 <FaTable color="white" />
                 Report
               </div>
+            </li>
+            <li className="cursor-pointer">
+              <Link
+                href={`/dashboard/profile`}
+                className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white"
+              >
+                <FaUser color="white" />
+                Profile
+              </Link>
             </li>
             <li className="cursor-pointer">
               <a
@@ -173,4 +182,3 @@ export const SidebarTecher = ({ title }) => {
     </>
   );
 };
-
