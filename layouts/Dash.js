@@ -3,6 +3,8 @@ import { useQuery } from "react-query";
 import { getUserfromDB } from "@/lib/reactQueryFetcher";
 import FourOhFour from "@/components/FourOhFour";
 import Loading from "@/components/Loading";
+import Head from "next/head";
+import Register from "@/components/register/Register";
 
 const Dash = ({ children, title, user }) => {
   const { data, error, isError, isLoading } = useQuery(
@@ -15,6 +17,9 @@ const Dash = ({ children, title, user }) => {
   if (data && data.status === "success" && data.type === "student") {
     return (
       <>
+        <Head>
+          <title>Dashboard</title>
+        </Head>
         <div className="bg-slate-900">
           <SidebarStudent title="Dashboard" />
           <div class="w-full sidebarenhance">
@@ -32,6 +37,9 @@ const Dash = ({ children, title, user }) => {
   if (data && data.status === "success" && data.type === "teacher") {
     return (
       <>
+        <Head>
+          <title>Dashboard</title>
+        </Head>
         <div className="bg-slate-900">
           <SidebarStudent title="Dashboard" />
           <div class="w-full sidebarenhance">
@@ -47,7 +55,7 @@ const Dash = ({ children, title, user }) => {
     );
   }
   if (data && data.status === "failed") {
-    return <div className="text-white">Register with other info</div>;
+    return <Register user={user} />;
   }
 };
 
