@@ -6,11 +6,14 @@ const CommonProfile = ({ pro }) => {
 
   useEffect(() => {
     const getUser = async () => {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/get_user`, {
-       params: {
-        auth0_token : pro.sub,
-       }
-      });
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/get_user`,
+        {
+          params: {
+            auth0_token: pro.sub,
+          },
+        }
+      );
       setUser(response.data);
       console.log(response.data);
     };
@@ -34,15 +37,56 @@ const CommonProfile = ({ pro }) => {
             alt={name}
           />
         </div>
-        <div className="md:w-2/3 p-6">
-          <h2 className="text-3xl font-semibold mb-4 text-gray-200">{name}</h2>
-          <p className="text-lg mb-4 text-gray-400">Type: {type}</p>
-          <p className="text-lg mb-4 text-gray-400">Username: {username}</p>
-          <p className="text-lg mb-4 text-gray-400">Email: {email}</p>
-          <p className="text-lg mb-4 text-gray-400">Semester: {sem}</p>
-          <p className="text-lg mb-4 text-gray-400">Branch: {branch}</p>
-          <p className="text-lg mb-4 text-gray-400">USN: {usn}</p>
-          <p className="text-lg mb-4 text-gray-400">Section: {section}</p>
+        <div class="w-full max-w-2xl bg-gray-900 rounded-lg shadow-xl overflow-hidden">
+          <div class="px-6 py-8 md:p-10">
+            <h2 class="text-3xl font-extrabold text-white mb-4">{name}</h2>
+            <div class="flex flex-wrap -mx-2 mb-6">
+              <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
+                <div class="px-4 py-3 bg-gray-800 rounded-lg shadow-sm">
+                  <p class="text-lg font-semibold text-white mb-2">Type</p>
+                  <p class="text-lg text-gray-300">{type}</p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
+                <div class="px-4 py-3 bg-gray-800 rounded-lg shadow-sm">
+                  <p class="text-lg font-semibold text-white mb-2">Username</p>
+                  <p class="text-lg text-gray-300">{username}</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap -mx-2 mb-6">
+              <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
+                <div class="px-4 py-3 bg-gray-800 rounded-lg shadow-sm">
+                  <p class="text-lg font-semibold text-white mb-2">Email</p>
+                  <p class="text-lg text-gray-300">{email}</p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
+                <div class="px-4 py-3 bg-gray-800 rounded-lg shadow-sm">
+                  <p class="text-lg font-semibold text-white mb-2">Semester</p>
+                  <p class="text-lg text-gray-300">{sem}</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap -mx-2 mb-6">
+              <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
+                <div class="px-4 py-3 bg-gray-800 rounded-lg shadow-sm">
+                  <p class="text-lg font-semibold text-white mb-2">Branch</p>
+                  <p class="text-lg text-gray-300">{branch}</p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
+                <div class="px-4 py-3 bg-gray-800 rounded-lg shadow-sm">
+                  <p class="text-lg font-semibold text-white mb-2">USN</p>
+                  <p class="text-lg text-gray-300">{usn}</p>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-800 rounded-lg shadow-sm">
+              <p class="text-lg font-semibold text-white mb-2">Section</p>
+              <p class="text-lg text-gray-300">{section}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -52,16 +52,22 @@ const SidebarStudent = ({ title }) => {
         <nav className="p-6  flex flex-col flex-wrap">
           <ul className="space-y-1.5">
             <li className="cursor-pointer">
-              <div className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
+              <Link
+                href={`/dashboard`}
+                className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white"
+              >
                 <FaHome color="white" />
                 Dashboard
-              </div>
+              </Link>
             </li>
             <li className="cursor-pointer">
-              <div className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
+              <Link
+                href={`/dashboard/profile`}
+                className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white"
+              >
                 <FaUser color="white" />
                 Profile
-              </div>
+              </Link>
             </li>
             <li className="cursor-pointer">
               <div className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
@@ -128,10 +134,13 @@ export const SidebarTecher = ({ title }) => {
         <nav className="p-6   flex flex-col flex-wrap">
           <ul className="space-y-1.5">
             <li className="cursor-pointer">
-              <div className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
+              <Link
+                href={`/dashboard`}
+                className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white"
+              >
                 <FaHome color="white" />
                 Dashboard
-              </div>
+              </Link>
             </li>
 
             <li className="cursor-pointer">
