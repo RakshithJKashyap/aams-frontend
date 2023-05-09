@@ -70,10 +70,13 @@ const SidebarStudent = ({ title }) => {
               </Link>
             </li>
             <li className="cursor-pointer">
-              <div className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white">
+              <Link
+                href={`/dashboard/student/report`}
+                className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm rounded-md hover:bg-gray-800 dark:bg-gray-900 text-white"
+              >
                 <FaInnosoft color="white" />
                 Report
-              </div>
+              </Link>
             </li>
             <li className="cursor-pointer">
               <a
